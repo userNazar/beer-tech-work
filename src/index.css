@@ -1,13 +1,185 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1 {
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+/* card */
+.card {
+  max-width: 150px;
+  cursor: pointer;
+  margin: 8px 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+  border-radius: 20px;
+}
+
+.card__img-block,
+.card__img-block>img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 1s ease;
+}
+
+.card__img-block>img {
+  height: 160px;
+  width: 70px;
+}
+
+.card__img-block>img:hover {
+  opacity: 0.7;
+  transform: scale(1.2);
+}
+
+
+.card__name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.card__ingredients {
+  text-align: center;
+  font-size: 17px;
+  color: rgba(207, 69, 69, 0.459);
+}
+
+
+
+
+
+/* desk */
+
+.desk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+
+}
+
+.desk__wrapper {
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgb(218, 213, 213);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+
+.desk__btns {
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+.selected {
+  background-color: rgba(202, 202, 202, 0.61);
+  opacity: 0.5;
+}
+
+.card__btn-wrapper {
+  width: 75px;
+  margin: 20px auto;
+}
+
+/* CSS */
+.desk__btn-delete {
+  appearance: none;
+  background-color: #bd2d2d;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.desk__btn-delete:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.desk__btn-delete:hover {
+  background-color: #972c2c;
+}
+
+.desk__btn-delete:focus {
+  box-shadow: rgba(164, 46, 46, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.desk__btn-delete:disabled {
+  background-color: #d39d94;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.desk__btn-delete:active {
+  background-color: #8e2929;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+/* cardpage */
+
+.cardpage__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardpage__info {
+  background-color: #F5F7FF;
+  height: 50vh;
+  width: 70vh;
+}
+
+.cardpage__photo,
+.cardpage__photo>img {
+  max-height: 500px;
+  width: 250px;
+}
+
+.cardpage__info span {
+  color: rgb(228, 122, 122);
+  font-size: 20px;
+}
+
+.cardpage__info p {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.cardpage__back {
+  font-size: 40px;
 }

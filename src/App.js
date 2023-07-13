@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+
+import { useMyStore } from './store';
+import DeskOfBeers from './components/DeskOfBeers';
+
+import { Routes, Route } from 'react-router-dom';
+import CardPage from './components/CardPage';
 
 function App() {
+
+  const { beerList, fetchBeerList } = useMyStore();
+
+  useEffect(() => {
+      fetchBeerList()
+    // eslint-disable-next-line
+  }, [])
+
+  console.log(beerList)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<DeskOfBeers />} />
+        <Route path='/:id' element={<CardPage />} />
+      </Routes>
+
+    </>
   );
 }
 
